@@ -2,11 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const port = 5000;
 
-const auth = require("./Routes/routes");
+const route = require("./Routes/routes");
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 // parse data
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // Use routes
-app.use("/routes", auth);
+app.use("/", route);
 
 async function main() {
   await mongoose.connect(

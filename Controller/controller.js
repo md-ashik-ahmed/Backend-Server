@@ -257,9 +257,9 @@ exports.getHouseList = async (req, res) => {
 exports.editHouseDetails = async (req, res) => {
   try {
     const payload = req.body;
-    const houseId = payload.houseId;
+    const houseID = payload.houseId;
     const findCriteria = {
-      _id: new mongoose.Types.ObjectId(houseId),
+      _id: new mongoose.Types.ObjectId(houseID),
     };
 
     const updateData = {
